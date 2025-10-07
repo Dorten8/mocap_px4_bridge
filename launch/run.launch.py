@@ -22,7 +22,17 @@ def generate_launch_description():
         parameters=[config]
     )
 
+    mocap_launch = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource(
+            os.path.join(
+                get_package_share_directory('mocap_optitrack'),
+                'launch',
+                'mocap.launch.py'
+            )
+        )
+   )
+
     return LaunchDescription([
-        mocap_launch_file,
+        mocap_launch,
         mocap_px4_bridge_node,
     ])
