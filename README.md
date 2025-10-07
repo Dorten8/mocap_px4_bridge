@@ -44,7 +44,7 @@ ros2 launch mocap_px4_bridge run.launch.py
 
 By default:
 
-1. This package will read the Optitrack measurements from the topic `/Robot_1/pose` 
+1. This package subscribes to OptiTrack measurement data published on a topic named after the robot’s rigid body name as defined in the Motive application. For example, if the robot was named X500_1 in Motive, the corresponding topic will be `/X500_1/pose`.
 2. Publish the measurements to the topic `/fmu/in/vehicle_visual_odometry`
 
 To change the names of these topic, you need to edit the file `config/params.yaml`.
