@@ -1,4 +1,4 @@
 /mocap_px4_bridge:
   ros__parameters:
-    mocap_topic: /FSB_RigidBody/pose
+    mocap_topic: /Mule_1/world
     px4_topic: /fmu/in/vehicle_visual_odometry

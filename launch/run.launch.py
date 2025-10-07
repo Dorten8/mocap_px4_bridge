@@ -23,6 +23,6 @@ def generate_launch_description():
     )
 
     return LaunchDescription([
-        mocap_launch_file,
+        #mocap_launch_file,
         mocap_px4_bridge_node,
     ])
