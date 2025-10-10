@@ -31,7 +31,7 @@ We will create a ROS 2 workspace in `~/ros2_ws`, clone the required packages, bu
 ```shell
 mkdir -p ~/ros2_ws/src/
 cd ~/ros2_ws/src/
-git clone https://github.com/ros-drivers/mocap_optitrack.git
+git clone https://github.com/SaxionMechatronics/mocap.git
 git clone https://github.com/SaxionMechatronics/mocap_px4_bridge.git
 git clone https://github.com/PX4/px4_msgs.git
 cd ~/ros2_ws
