@@ -1,4 +1,4 @@
 /mocap_px4_bridge:
   ros__parameters:
-    mocap_topic: /x500_3/world
+    mocap_topic: /rigid_body_name/world
     px4_topic: /fmu/in/vehicle_visual_odometry
