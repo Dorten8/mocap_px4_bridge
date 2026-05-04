@@ -20,9 +20,10 @@ find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(px4_msgs REQUIRED)
 find_package(geometry_msgs REQUIRED)
+find_package(motion_capture_tracking_interfaces REQUIRED)
 
 add_executable(mocap_px4_bridge src/mocap_px4_bridge.cpp)
-ament_target_dependencies(mocap_px4_bridge rclcpp px4_msgs geometry_msgs)
+ament_target_dependencies(mocap_px4_bridge rclcpp px4_msgs geometry_msgs motion_capture_tracking_interfaces)
 
 install(TARGETS
   mocap_px4_bridge
