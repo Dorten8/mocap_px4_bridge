@@ -32,8 +32,10 @@ public:
 		RCLCPP_INFO(get_logger(), ("mocap_topic: " + mocap_topic).c_str());
 		RCLCPP_INFO(get_logger(), ("px4_topic:   " + px4_topic).c_str());
 
-		poseSub = this->create_subscription<motion_capture_tracking_interfaces::msg::NamedPoseArray>(mocap_topic, 10, std::bind(&MocapPX4Bridge::posesCallback, this, _1));
-		odomPub = this->create_publisher<px4_msgs::msg::VehicleOdometry>(px4_topic, 10);
+		auto qos = rclcpp::SensorDataQoS();
+		poseSub = this->create_subscription<motion_capture_tracking_interfaces::msg::NamedPoseArray>(
+			mocap_topic, qos, std::bind(&MocapPX4Bridge::posesCallback, this, _1));
+  		odomPub = this->create_publisher<px4_msgs::msg::VehicleOdometry>(px4_topic, 10);
 	}
 
 private:
