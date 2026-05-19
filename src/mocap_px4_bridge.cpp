@@ -19,7 +19,7 @@ using namespace std::chrono_literals;
 
 // --- Watchdog thresholds ---
 // WATCHDOG_TIMEOUT_S: after this long with no Mocap data, stop holding and let EKF2 decide.
-static constexpr double WATCHDOG_TIMEOUT_S = 0.5;
+static constexpr double WATCHDOG_TIMEOUT_S = 0.2;
 // MIN_MOCAP_PERIOD_S: gap larger than this means Mocap has dropped below 30Hz minimum.
 // 1/30Hz ≈ 33ms. Only when the gap exceeds this does the timer fill in.
 static constexpr double MIN_MOCAP_PERIOD_S = 1.0 / 30.0;
