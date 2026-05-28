@@ -46,13 +46,14 @@ public:
 
 		// Watchdog timer fires at 50Hz (every 20ms).
 		// It is SILENT when Mocap is healthy — it only publishes when a dropout is detected.
-		watchdogTimer_ = this->create_wall_timer(
-			20ms, std::bind(&MocapPX4Bridge::watchdogTimerCallback, this));
+		// watchdogTimer_ = this->create_wall_timer(
+		// 	20ms, std::bind(&MocapPX4Bridge::watchdogTimerCallback, this));
 	}
 
 private:
 	// Watchdog: fires every 20ms. Only publishes if Mocap has gone silent
 	// (gap > 33ms) AND is still within recovery window (< 500ms).
+	/*
 	void watchdogTimerCallback() {
 		if (!has_pose_) {
 			return; // Never received a pose — nothing to hold.
@@ -85,6 +86,7 @@ private:
 		msg.timestamp_sample = now_us;
 		odomPub->publish(msg);
 	}
+	*/
 
 	// Pass-through: called on every real Mocap frame. Publishes directly (full Mocap rate)
 	// and stores the pose so the watchdog can hold it during a dropout.
